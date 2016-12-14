@@ -1,0 +1,23 @@
+﻿
+    
+    <div class="container" ng-controller="EmpController">
+        <div class="row">
+            <form class="" name="loginform" role="form" novalidate>
+                <div class="form-group">
+                    <input type="email" class="form-control" name="UserEmail" required ng-model="UserEmail" />
+                    <span ng-show="loginform.UserEmail.$invalid && !loginform.UserEmail.$pristine">valid Email</span>
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control" name="username" required ng-model="UserPassword" ng-minlength="3"  />
+                    <span ng-show="loginform.UserPassword.$invalid">Please Enter password</span>
+                </div>
+               
+                <button type="submit" class="btn btn-primary" ng-disabled="loginform.$invalid" ng-click="login()">Submit</button>
+            </form>
+
+
+        </div>
+    </div>
+
+
+

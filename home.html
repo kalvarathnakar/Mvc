@@ -1,0 +1,104 @@
+﻿
+    <div class="container" >
+        <div ng-hide="divbook">
+            <span>{{username}}</span>
+            <button class="btn btn-primary pull-left" ng-click="logout()">logout</button>
+            <button class="btn btn-primary pull-right" ng-click="AddEmp()">Add</button>
+            <table class="table table-bordered table-hover">
+                <thead class="btn-primary">
+                    <tr>
+                        <th>EmpName</th>
+                        <th>Emp Salary</th>
+                        <th>Emp Designation</th>
+                        <th>Emp Department</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="book in books">
+                        <td>{{book.Ename}}</td>
+                        <td>{{book.ESalary}}</td>
+                        <td>{{book.Edepartment}}</td>
+                        <td>{{book.Eorganisation}}</td>
+                        <td>
+                            <span ng-click="editBook(book)" class="btn btn-primary">Edit</span>
+                            <span ng-click="deleteBook(book)" class="btn btn-danger">Delete</span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+        <myc info="naomi"></myc>
+        <student name="Mahesh"></student><br />
+        <student name="Piyush"></student>
+        <table class="table table-bordered table-hover ">
+            <thead class="btn-primary">
+                <tr>
+                    <th>EmpName</th>
+                    <th>Emp Salary</th>
+                    <th>Emp Designation</th>
+                    <th>Emp Department</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="book in students">
+                    <td>{{book.Ename}}</td>
+                    <td>{{book.ESalary}}</td>
+                    <td>{{book.Edepartment}}</td>
+                    <td>{{book.Eorganisation}}</td>
+                    <td>
+                        <span ng-click="editBook(book)" class="btn btn-primary">Edit</span>
+                        <span ng-click="deleteBook(book)" class="btn btn-danger">Delete</span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+    
+
+        <div ng-show="divBook">
+            <p class="divHead"></p>
+            <table class="table">
+                <tr>
+                    <td><b><i>{{Action}} Book</i></b></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td><b>Id</b></td>
+                    <td>
+                        <input type="text" disabled="disabled" ng-model="emp.Eid" />
+                    </td>
+                    <td><b>Name</b></td>
+                    <td>
+                        <input type="text" ng-model="emp.Ename" />
+                    </td>
+                </tr>
+                <tr>
+                    <td><b>Salary</b></td>
+                    <td>
+                        <input type="text" ng-model="emp.ESalary" />
+                    </td>
+                    <td><b>Department</b></td>
+                    <td>
+                        <input type="text" ng-model="emp.Edepartment" />
+                    </td>
+                </tr>
+                <tr>
+                    <td><b>Organisation</b></td>
+                    <td>
+                        <input type="text" ng-model="emp.Eorganisation" />
+                    </td>
+                    <td></td>
+                    <td>
+                        <input type="button" class="btn btn-default" value="Save" ng-click="AddUpdateBook(emp)" />
+                        <input type="button" class="btn btn-danger" value="Cancel" ng-click="Cancel()" />
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    
